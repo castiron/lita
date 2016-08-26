@@ -24,8 +24,8 @@ Lita.configure do |config|
   # config.adapter.password = "secret"
 
   ## Example: Set options for the Redis connection.
-  config.redis.host = "127.0.0.1"
-  config.redis.port = 6379
+  config.redis.host = ENV["BOXEN_REDIS_HOST"]
+  config.redis.port = ENV["BOXEN_REDIS_PORT"]
 
   ## Heroku Redis To-Go connection
   # Uncomment to use Heroku configuration
@@ -42,7 +42,7 @@ Lita.configure do |config|
   config.robot.adapter = :slack
   # config.robot.admins = ["U026ARU7X"]
 
-  config.adapters.slack.token = ENV["GOOGLE_SLACK_TOKEN"]
+  config.adapters.slack.token = ENV["SLACK_TOKEN"]
   # config.adapters.slack.link_names = true
   # config.adapters.slack.parse = "full"
   # config.adapters.slack.unfurl_links = false
