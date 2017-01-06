@@ -1,3 +1,5 @@
+require './lita-cic-quotes/lib/lita/handlers/cic_quotes'
+
 Lita.configure do |config|
   # The name your robot will use.
   config.robot.name = "Lita"
@@ -24,7 +26,7 @@ Lita.configure do |config|
   # config.adapter.password = "secret"
 
   ## Example: Set options for the Redis connection.
-  # config.redis.host = ENV["BOXEN_REDIS_HOST"]
+  # config.redis[:url] = ENV["BOXEN_REDIS_URL"]
   # config.redis.port = ENV["BOXEN_REDIS_PORT"]
 
   ## Heroku Redis To-Go connection
@@ -49,8 +51,13 @@ Lita.configure do |config|
   # config.adapters.slack.unfurl_media = true
 
   # Faker config
+  # NB: Faker (and this config) may need to be commented out to work on Mac OS X right now
   config.robot.locale = 'en-US'
 
   # Doge words
   config.handlers.doge.default_words = ["jam", "server", "repo", "glorp", "freshie"]
+
+  # CIC Quotes config
+  config.handlers.cic_quotes.api_key = ENV["AIRTABLE_API_KEY"]
+  config.handlers.cic_quotes.table_id = ENV["AIRTABLE_TABLE_ID"]
 end

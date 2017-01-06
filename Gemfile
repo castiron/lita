@@ -2,6 +2,9 @@ source "https://rubygems.org"
 
 gem "lita"
 
+# Active Support methods required for Airtable API use
+gem "activesupport"
+gem "airtable"
 # Uncomment to use the HipChat adapter
 # gem "lita-hipchat"
 
