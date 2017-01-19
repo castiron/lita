@@ -1,2 +1,5 @@
 # IDE Files
 .idea
+
+# Development Only Config
+lita_config_dev.rb
