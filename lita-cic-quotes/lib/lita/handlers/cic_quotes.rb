@@ -60,7 +60,8 @@ module Lita
       end
 
       def handle_quote(response)
-        response.reply response.matches[0].to_s
+        # Uncomment to see all matches
+        # response.reply response.matches[0].to_s
         # Get quote batch and people table
         batch, peeps = pull_data
 
