@@ -4,7 +4,7 @@ require './lita-cic-quotes/lib/lita/handlers/cic_quotes'
 
 Lita.configure do |config|
   # The name your robot will use.
-  config.robot[:name] = ENV["ROBOT_NAME"] ? ENV["ROBOT_NAME"] : 'Legolas'
+  config.robot.name = ENV["ROBOT_NAME"] ? ENV["ROBOT_NAME"] : 'Legolas'
 
   # The locale code for the language to use.
   #config.robot.locale = :en
@@ -12,7 +12,7 @@ Lita.configure do |config|
   # The severity of messages to log. Options are:
   # :debug, :info, :warn, :error, :fatal
   # Messages at the selected level and above will be logged.
-  config.robot[:log_level] = :info
+  config.robot.log_level = :info
 
   # An array of user IDs that are considered administrators. These users
   # the ability to add and remove other users from authorization groups.
@@ -55,7 +55,7 @@ Lita.configure do |config|
 #config.robot.locale = 'en_US'
 
   # Doge words
-  config.handlers.doge.default_words = ["jam", "server", "repo", "glorp", "freshie"]
+#  config.handlers.doge.default_words = ["jam", "server", "repo", "glorp", "freshie"]
 
   # CIC Quotes config
   config.handlers.cic_quotes.api_key = ENV["AIRTABLE_API_KEY"]
