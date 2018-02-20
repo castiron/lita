@@ -22,3 +22,5 @@ gem "lita-karma"
 gem "lita-lunch-order"
 gem "lita-doge"
 gem "lita-pugbomb"
+
+gem "dotenv"

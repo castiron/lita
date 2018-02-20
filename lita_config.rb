@@ -1,8 +1,10 @@
+require 'dotenv/load'
+
 require './lita-cic-quotes/lib/lita/handlers/cic_quotes'
 
 Lita.configure do |config|
   # The name your robot will use.
-  config.robot.name = "Lita"
+  config.robot[:name] = ENV["ROBOT_NAME"] ? ENV["ROBOT_NAME"] : 'Legolas'
 
   # The locale code for the language to use.
   # config.robot.locale = :en
@@ -10,16 +12,12 @@ Lita.configure do |config|
   # The severity of messages to log. Options are:
   # :debug, :info, :warn, :error, :fatal
   # Messages at the selected level and above will be logged.
-  config.robot.log_level = :info
+  config.robot[:log_level] = :info
 
   # An array of user IDs that are considered administrators. These users
   # the ability to add and remove other users from authorization groups.
   # What is considered a user ID will change depending on which adapter you use.
   # config.robot.admins = ["1", "2"]
-
-  # The adapter you want to connect with. Make sure you've added the
-  # appropriate gem to the Gemfile.
-  config.robot.adapter = :shell
 
   ## Example: Set options for the chosen adapter.
   # config.adapter.username = "myname"
@@ -27,12 +25,12 @@ Lita.configure do |config|
 
   ## Example: Set options for the Redis connection.
   # config.redis[:url] = ENV["BOXEN_REDIS_URL"]
-  # config.redis.port = ENV["BOXEN_REDIS_PORT"]
+  # config.redis[Lport] = ENV["BOXEN_REDIS_PORT"]
 
   ## Heroku Redis To-Go connection
   # Uncomment to use Heroku configuration
   config.redis[:url] = ENV["REDISTOGO_URL"]
-  config.http.port = ENV["REDISTOGO_PORT"]
+  config.http[:port] = ENV["REDISTOGO_PORT"]
 
   ## Example: Set configuration for any loaded handlers. See the handler's
   ## documentation for options.
