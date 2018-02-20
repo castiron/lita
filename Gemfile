@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem "lita"
+gem "lita-dotenv"
 
 # Active Support methods required for Airtable API use
 gem "activesupport"
@@ -22,5 +23,3 @@ gem "lita-karma"
 gem "lita-lunch-order"
 gem "lita-doge"
 gem "lita-pugbomb"
-
-gem "dotenv"

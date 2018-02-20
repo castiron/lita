@@ -41,6 +41,9 @@ GEM
       thor (>= 0.18.1)
     lita-doge (0.1.0)
       lita (>= 4.7)
+    lita-dotenv (0.9.0)
+      dotenv (~> 2.0)
+      lita (>= 4.4)
     lita-faker (0.1.0)
       faker (~> 1.4)
       lita (~> 4.4)
@@ -99,9 +102,9 @@ PLATFORMS
 DEPENDENCIES
   activesupport
   airtable
-  dotenv
   lita
   lita-doge
+  lita-dotenv
   lita-faker
   lita-google-images
   lita-karma

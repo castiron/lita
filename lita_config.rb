@@ -7,7 +7,7 @@ Lita.configure do |config|
   config.robot[:name] = ENV["ROBOT_NAME"] ? ENV["ROBOT_NAME"] : 'Legolas'
 
   # The locale code for the language to use.
-  # config.robot.locale = :en
+  #config.robot.locale = :en
 
   # The severity of messages to log. Options are:
   # :debug, :info, :warn, :error, :fatal
@@ -29,8 +29,10 @@ Lita.configure do |config|
 
   ## Heroku Redis To-Go connection
   # Uncomment to use Heroku configuration
-  config.redis[:url] = ENV["REDISTOGO_URL"]
-  config.http[:port] = ENV["REDISTOGO_PORT"]
+  #config.redis[:url] = ENV["REDISTOGO_URL"]
+  #config.http[:port] = ENV["REDISTOGO_PORT"]
+
+  config.redis[:host] = "redis"
 
   ## Example: Set configuration for any loaded handlers. See the handler's
   ## documentation for options.
@@ -50,7 +52,7 @@ Lita.configure do |config|
 
   # Faker config
   # NB: Faker (and this config) may need to be commented out to work on Mac OS X right now
-  config.robot.locale = 'en-US'
+#config.robot.locale = 'en_US'
 
   # Doge words
   config.handlers.doge.default_words = ["jam", "server", "repo", "glorp", "freshie"]

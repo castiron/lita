@@ -2,4 +2,5 @@
 .idea
 
 # Development Only Config
-lita_config_dev.rb.env
+lita_config_dev.rb
+.env
