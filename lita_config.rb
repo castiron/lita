@@ -1,5 +1,3 @@
-require 'dotenv/load'
-
 require './lita-cic-quotes/lib/lita/handlers/cic_quotes'
 
 Lita.configure do |config|
